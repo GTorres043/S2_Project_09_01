@@ -54,10 +54,17 @@
     <section>
         <h1>Conference Registration Form</h1>
         <p>Required Item (*)</p>
+
+        <!-- This will start the form it is needed to make it an actual webform -->
         <form action="http://www.example.com/cg/register" method="POST">
 
+            <!-- labels are used to give a name and a control to the input attributes -->
             <label for="title">Title</label>
+
+            <!-- an input list will have a control wich is the id a type which is text and a name. i added a list to this input uding the list attribute -->
             <input name="title" id="titleBox" type="text" list="titleList">
+
+            <!-- a data list stores the appropriate words you should be using to complete the form. to insert the values of the list you have to add an option attribute with a value which is going to be the word displayed in the box in a clickable scroll menu when clicked on -->
             <datalist id="titleList">
                 <option value="Mr."></option>
                 <option value="Mrs."></option>
@@ -72,7 +79,7 @@
             <input name="firstName" id="fnBox" type="text" required>
 
             <label for="lastName">Last Name*</label>
-            <input name="lastName" id="lnBox" type="text" required>
+            <input name="lastName" id="inBox" type="text" required>
 
             <label for="address">Address*</label>
             <input name="address" id="addBox" type="text" required>
@@ -84,21 +91,27 @@
             <input name="email" id="mailBox" type="email" required>
 
             <label for="phone">Phone Number*</label>
+
+            <!-- this input attribute has pattern attribute inside of it. it helps to validate the form so that the user knows what is needed in order to complete the form. if the pattern they enter is incorrect it will no be invalid -->
             <input name="phoneNumber" id="phoneBox" type="tel" placeholder="(nnn) nnn-nnnn" pattern=" ^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$"
                 required>
 
             <label for="membership">ACGIP Membership Number </label>
+
+            <!-- this input also has a placeholder attribute inside of it which helps the user get an idea of what is required to submit and for thier form to be valid -->
             <input name="acgopID" id="idBox" type="text" placeholder="acgip-nnnnnn" pattern="^acgip\-\d{6}$ ">
 
             <label for="regList">Registration Category</label>
-            <select name="registerType" id="regList"></select>
-            <option value="member">ACGIP Member ($695)</option>
-            <option value="nonmember">Non-Member ($795)</option>
-            <option value="student">Student ($310)</option>
-            <option value="poster">Poster ($95)</option>
-            <option value="guest">Guest ($35)</option>
+            <select name="registerType" id="regList">
+                <option value="member">ACGIP Member ($695)</option>
+                <option value="nonmember">Non-Member ($795)</option>
+                <option value="student">Student ($310)</option>
+                <option value="poster">Poster ($95)</option>
+                <option value="guest">Guest ($35)</option>
             </select>
             <p>
+
+                <!-- this input attribute will be a submit button that is clickable when the user is ready to submit thier form -->
                 <input type="submit" value="Continue">
             </p>
         </form>

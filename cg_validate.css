@@ -9,16 +9,35 @@
 
    Filename: cg_validate.css
 
-*/
+
 
 
 /* Validation Styles */
-/* select:focus,
+
+/* when the select,input, and textarea attributes are being focused on the background color will change to a light yellow color indicating that the user is in that slot */
+select:focus,
 input:focus,
 textarea:focus {
     background-color: rgb(245, 245, 140);
 }
 
-select:focus,
-input:focus,
-textarea:focus */
+/* when an input with the id's: fnBox, inBox, addBox,mailBox, phoneBox, and idBox are valid the background color will change to a light green and a small icon will appear on the right indicating that the infromation that the user input is correct */
+input#fnBox:focus:valid,
+input#inBox:focus:valid,
+input#addBox:focus:valid,
+input#mailBox:focus:valid,
+input#phoneBox:focus:valid,
+input#idBox:focus:valid {
+    background: rgb(220, 255, 220) url(cg_valid.png) bottom right/contain no-repeat;
+
+}
+
+/* when an input with the id's: fnBox, inBox, addBox,mailBox, phoneBox, and idBox are invalid the backgroun color will change to a light red color and a small red "x" icon will appear on the right indicating that the information that was input is invalid*/
+input#fnBox:focus:invalid,
+input#inBox:focus:invalid,
+input#addBox:focus:invalid,
+input#mailBox:focus:invalid,
+input#phoneBox:focus:invalid,
+input#idBox:focus:invalid {
+    background: rgb(255, 232, 232) url(cg_invalid.png) bottom right/contain no-repeat;
+}
